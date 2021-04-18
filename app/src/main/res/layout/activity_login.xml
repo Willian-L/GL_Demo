@@ -21,13 +21,13 @@
         style="@style/edt_login"
         android:layout_width="match_parent"
         android:layout_marginTop="40dp"
-        android:hint="@string/ch_edt_login_accout" />
+        android:hint="@string/ch_edt_login_account" />
 
     <EditText
         android:id="@+id/edt_login_password"
         style="@style/edt_login"
         android:layout_marginTop="15dp"
-        android:hint="@string/ch_edt_login_account"
+        android:hint="@string/ch_edt_login_password"
         android:inputType="textPassword"
         android:maxLength="16" />
 

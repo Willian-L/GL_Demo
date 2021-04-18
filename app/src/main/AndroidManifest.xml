@@ -11,18 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GD_LG">
-        <activity android:name=".activities.LoginActivity"></activity>
+        <activity android:name=".activities.LinearLayoutActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.FirstActivity" />
         <activity
             android:name=".activities.GetExtraActivity"
             android:launchMode="singleTop" />
         <activity android:name=".activities.LinWeiLiActivity" />
         <activity android:name=".activities.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

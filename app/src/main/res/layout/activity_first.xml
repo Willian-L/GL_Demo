@@ -7,7 +7,7 @@
     tools:context=".activities.FirstActivity">
 
     <Button
-        android:id="@+id/btn_intent"
+        android:id="@+id/first_btn_intent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -15,7 +15,7 @@
         android:textAllCaps="false" />
 
     <EditText
-        android:id="@+id/edt_putExtra"
+        android:id="@+id/first_edt_putExtra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -23,9 +23,16 @@
         android:text="2013202604032 林炜力" />
 
     <Button
-        android:id="@+id/btn_putExtra"
+        android:id="@+id/first_btn_putExtra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="putExtra"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/first_btn_Linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LinearLayout"
         android:textAllCaps="false" />
 </LinearLayout>
