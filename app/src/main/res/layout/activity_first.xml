@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.FirstActivity">
+
+    <Button
+        android:id="@+id/btn_intent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Intent"
+        android:textAllCaps="false" />
+
+    <EditText
+        android:id="@+id/edt_putExtra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="putExtra"
+        android:text="2013202604032 林炜力" />
+
+    <Button
+        android:id="@+id/btn_putExtra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="putExtra"
+        android:textAllCaps="false" />
+</LinearLayout>

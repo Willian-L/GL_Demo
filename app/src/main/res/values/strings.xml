@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">GD_LG</string>
+    <string name="app_name">GDLG_Demo</string>
+    <string name="ch_edt_login_accout">账 号</string>
+    <string name="ch_edt_login_account">密 码</string>
+    <string name="ch_edt_login_login">登  陆</string>
+    <string name="ch_btn_login_forgot">忘记密码</string>
+    <string name="ch_btn_login_register">用户注册</string>
 </resources>

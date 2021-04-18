@@ -1,20 +1,21 @@
-package com.example.gd_lg;
+package com.example.gd_lg.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class LinWeiLiActivity extends AppCompatActivity {
+import com.example.gd_lg.permissionsUtils.PermissionsUtils;
+import com.example.gd_lg.R;
+
+public class LinWeiLiActivity extends Activity {
 
     Button btn_call;
 

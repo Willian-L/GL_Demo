@@ -1,4 +1,4 @@
-package com.example.gd_lg;
+package com.example.gd_lg.permissionsUtils;
 
 import android.Manifest;
 import android.app.Activity;

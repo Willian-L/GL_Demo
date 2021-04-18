@@ -1,4 +1,4 @@
-package com.example.gd_lg;
+package com.example.gd_lg.permissionsUtils;
 
 import android.app.Activity;
 import android.app.AlertDialog;

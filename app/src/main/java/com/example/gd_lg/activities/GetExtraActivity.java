@@ -1,7 +1,8 @@
-package com.example.gd_lg;
+package com.example.gd_lg.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class GetExtraActivity extends AppCompatActivity {
+import com.example.gd_lg.R;
+
+public class GetExtraActivity extends Activity {
 
     TextView txt_getExtra;
     Button btn_singleTop;

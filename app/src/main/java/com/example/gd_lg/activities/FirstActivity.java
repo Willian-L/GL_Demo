@@ -1,7 +1,8 @@
-package com.example.gd_lg;
+package com.example.gd_lg.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.gd_lg.R;
+
+public class FirstActivity extends Activity {
 
     EditText edt_putExtra;
     Button btn_intent, btn_putExtra;
@@ -17,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_first);
 
         init();
 
@@ -25,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, LinWeiLiActivity.class);
+                intent.setClass(FirstActivity.this, LinWeiLiActivity.class);
                 startActivity(intent);
             }
         });
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("putExtra", name);
                 Intent intent = new Intent();
                 intent.putExtra("name", name);
-                intent.setClass(MainActivity.this, GetExtraActivity.class);
+                intent.setClass(FirstActivity.this, GetExtraActivity.class);
                 startActivity(intent);
             }
         });
@@ -49,4 +52,3 @@ public class MainActivity extends AppCompatActivity {
         edt_putExtra = findViewById(R.id.edt_putExtra);
     }
 }
-
