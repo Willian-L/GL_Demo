@@ -35,4 +35,11 @@
         android:layout_height="wrap_content"
         android:text="LinearLayout"
         android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/first_btn_weixin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WeiXin"
+        android:textAllCaps="false"/>
 </LinearLayout>

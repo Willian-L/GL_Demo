@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GD_LG">
+        <activity android:name=".activities.WeiXinActivity"></activity>
         <activity android:name=".activities.LinearLayoutActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.FirstActivity" />
