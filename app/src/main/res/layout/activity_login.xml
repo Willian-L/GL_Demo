@@ -21,6 +21,7 @@
         style="@style/edt_login"
         android:layout_width="match_parent"
         android:layout_marginTop="40dp"
+        android:text="11111"
         android:hint="@string/ch_edt_login_account" />
 
     <EditText
@@ -29,6 +30,7 @@
         android:layout_marginTop="15dp"
         android:hint="@string/ch_edt_login_password"
         android:inputType="textPassword"
+        android:text="11111"
         android:maxLength="16" />
 
     <Button

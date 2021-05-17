@@ -33,6 +33,11 @@ public class LoginActivity extends AppCompatActivity {
 
         init();
 
+        if (!edt_account.getText().equals("") && !edt_password.getText().equals("")){
+            btn_login.setEnabled(true);
+            btn_login.setBackgroundResource(R.drawable.btn_true);
+        }
+
         edt_account.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

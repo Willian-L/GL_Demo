@@ -7,42 +7,25 @@
     android:orientation="vertical"
     tools:context=".activities.WeiXinActivity">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/wx_toolBar"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="#EEEEEE">
-
+        android:layout_height="50dp"
+        android:background="#EEEEEE"
+        app:popupTheme="@style/OverflowMenuStyle">
 
         <TextView
-            android:id="@+id/txt_wx_title"
+            android:id="@+id/tool_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Title"
-            android:textSize="20dp"
-            android:textColor="#000000"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:text="Title" />
 
-        <ImageButton
-            android:id="@+id/btn_wx_add"
-            android:background="@mipmap/add"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/btn_wx_titleBar"/>
+    </androidx.appcompat.widget.Toolbar>
 
-        <ImageButton
-            android:id="@+id/btn_wx_search"
-            android:background="@mipmap/search"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btn_wx_add"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/btn_wx_titleBar" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
         android:layout_width="match_parent"
@@ -132,6 +115,5 @@
 
 
     </LinearLayout>
-
 
 </LinearLayout>
