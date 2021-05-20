@@ -86,6 +86,7 @@ public class LinearLayoutActivity extends AppCompatActivity {
 //                Log.i("info", userInfo.getSex() + userInfo.getRemember() + userInfo.getAutoLogin());
                 DBAdapter dbAdapter = new DBAdapter(getApplicationContext());
                 dbAdapter.open();
+                Log.i("insert", "account" + userInfo.getAccount());
                 if (dbAdapter.insert_linear(userInfo.getAccount(), userInfo.getPassword(), userInfo.getSex(), userInfo.getRemember(), userInfo.getAutoLogin())) {
                     txt_print.setText("注册成功");
                 } else {

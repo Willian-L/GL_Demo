@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -109,8 +110,11 @@ public class DBAdapter {
         ContentValues contentValues = new ContentValues();
         contentValues.put("account", account);
         contentValues.put("password", password);
-        if (db.insert("login_info", null, contentValues) > 0) {
-            result = true;
+        Cursor cursor = db.query("login_info", new String[]{"account"}, "account='" + account + "'", null, null, null, null);
+        if (cursor.getCount() <= 0){
+            if (db.insert("login_info", null, contentValues) > 0) {
+                result = true;
+            }
         }
         return result;
     }
@@ -119,7 +123,7 @@ public class DBAdapter {
     public boolean login(String account, String password) {
         boolean result = false;
         Cursor cursor = db.query("login_info", new String[]{"account", "password"}, "account='" + account + "'and password='" + password + "'", null, null, null, null);
-        if (cursor.getCount() == 1) {
+        if (cursor.getCount() >= 1) {
             result = true;
         }
         return result;

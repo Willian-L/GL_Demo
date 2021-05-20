@@ -113,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (dbAdapter.login(userInfo.getAccount(), userInfo.getPassword())){
                     Toast.makeText(getApplicationContext(), "登录成功！", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(LoginActivity.this, FirstActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, WeiXinActivity.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(), "登录失败！", Toast.LENGTH_LONG).show();
