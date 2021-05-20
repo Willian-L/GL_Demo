@@ -1,14 +1,11 @@
 package com.example.gd_lg.activities;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.view.ContextThemeWrapper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,6 +49,7 @@ public class WeiXinActivity extends AppCompatActivity implements View.OnClickLis
         btn_news.performClick();
 
         setToolbar();
+
     }
 
     private void init(){
@@ -173,9 +171,10 @@ public class WeiXinActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_wei_xin_plus, menu);
+        getMenuInflater().inflate(R.menu.wx_options, menu);
         return true;
     }
+
 
     //    @SuppressLint("RestrictedApi")
 //    private void showPopupMenu(final Context context, View view){

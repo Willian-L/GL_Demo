@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorPress">#ffffff</color>
+    <color name="colorNormal">#8A73F5</color>
+    <color name="tv_style_color_main">#7A63E5</color>
+    <color name="tv_style_color_seconde">#FFFFFF</color>
 </resources>

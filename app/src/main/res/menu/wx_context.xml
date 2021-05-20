@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/wx_set_unread"
+        android:title="标为未读"
+        android:orderInCategory="1"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/wx_istop"
+        android:title="置顶该聊天"
+        android:orderInCategory="2"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/wx_notop"
+        android:title="取消置顶"
+        android:visible="false"
+        android:orderInCategory="2"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/wx_blank_news"
+        android:title="不显示该聊天"
+        android:orderInCategory="3"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/wx_del_news"
+        android:title="删除该聊天"
+        android:orderInCategory="4"
+        app:showAsAction="never" />
+</menu>

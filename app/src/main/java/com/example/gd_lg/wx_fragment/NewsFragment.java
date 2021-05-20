@@ -5,10 +5,12 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -19,7 +21,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gd_lg.R;
-import com.example.gd_lg.activities.WeiXinActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,8 +88,10 @@ public class NewsFragment extends Fragment {
                 Toast.makeText(getActivity(), "点击了第" + (position+1) + "项", Toast.LENGTH_SHORT).show();
             }
         });
+        registerForContextMenu(newList);
         return view;
     }
+
 
     class MylistAdapter extends BaseAdapter{
 
@@ -120,5 +123,31 @@ public class NewsFragment extends Fragment {
             date.setText(mydata.get(position).date);
             return itemView;
         }
+    }
+
+    @Override
+    public void onCreateContextMenu(@NonNull ContextMenu menu, @NonNull View v, @Nullable ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getActivity().getMenuInflater();
+        inflater.inflate(R.menu.wx_context, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.wx_set_unread:
+                Toast.makeText(getActivity(), "标为未读", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.wx_istop:
+                Toast.makeText(getActivity(), "置顶该聊天", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.wx_blank_news:
+                Toast.makeText(getActivity(), "不显示该聊天", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.wx_del_news:
+                Toast.makeText(getActivity(), "删除该聊天", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onContextItemSelected(item);
     }
 }

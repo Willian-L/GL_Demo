@@ -21,7 +21,7 @@
         style="@style/edt_login"
         android:layout_width="match_parent"
         android:layout_marginTop="40dp"
-        android:text="11111"
+        android:text="2013202604032"
         android:hint="@string/ch_edt_login_account" />
 
     <EditText
@@ -30,14 +30,36 @@
         android:layout_marginTop="15dp"
         android:hint="@string/ch_edt_login_password"
         android:inputType="textPassword"
-        android:text="11111"
+        android:text="linweili"
         android:maxLength="16" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/cbx_login_autologin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txt_login_autologin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_login_autologin"
+            android:textSize="18dp"
+            android:gravity="center"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_login_login"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="50dp"
         android:background="@drawable/btn_false"
         android:enabled="false"
         android:text="@string/ch_edt_login_login"
