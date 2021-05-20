@@ -28,7 +28,6 @@ public class LoginActivity extends AppCompatActivity {
     CheckBox cbx_auto;
 
     private SharedPreferences sp;
-    private final String AUTO_LOGIN = "on";
 
     @SuppressLint("WorldReadableFiles")
     @Override
@@ -51,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                 userInfo.setAccount(sp.getString("ACCOUNT", ""));
                 userInfo.setPassword(sp.getString("PASSWORD", ""));
                 login(userInfo.getAccount(), userInfo.getPassword());
+                Toast.makeText(getApplicationContext(), "自动登录成功！", Toast.LENGTH_LONG).show();
             }catch (Exception e){
 
             }
@@ -144,7 +144,7 @@ public class LoginActivity extends AppCompatActivity {
         DBAdapter dbAdapter = new DBAdapter(getApplicationContext());
         dbAdapter.open();
         if (dbAdapter.login(account, password)){
-            Toast.makeText(getApplicationContext(), "登录成功！", Toast.LENGTH_LONG).show();
+//            Toast.makeText(getApplicationContext(), "登录成功！", Toast.LENGTH_LONG).show();
             sp_auto(account, password);
             Intent intent = new Intent(LoginActivity.this, WeiXinActivity.class);
             startActivity(intent);
