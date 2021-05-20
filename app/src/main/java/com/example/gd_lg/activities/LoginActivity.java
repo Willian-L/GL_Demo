@@ -1,15 +1,19 @@
 package com.example.gd_lg.activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -21,7 +25,12 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText edt_account, edt_password;
     Button btn_login, btn_register;
+    CheckBox cbx_auto;
 
+    private SharedPreferences sp;
+    private final String AUTO_LOGIN = "on";
+
+    @SuppressLint("WorldReadableFiles")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +41,22 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         init();
+
+        sp = getSharedPreferences("accountInfo", Context.MODE_PRIVATE);
+
+        if (sp.getBoolean("AUTO_LOGIN", true)){
+            cbx_auto.setChecked(true);
+            try {
+                UserInfo userInfo = new UserInfo();
+                userInfo.setAccount(sp.getString("ACCOUNT", ""));
+                userInfo.setPassword(sp.getString("PASSWORD", ""));
+                login(userInfo.getAccount(), userInfo.getPassword());
+            }catch (Exception e){
+
+            }
+        }else {
+            cbx_auto.setChecked(false);
+        }
 
         if (!edt_account.getText().equals("") && !edt_password.getText().equals("")){
             btn_login.setEnabled(true);
@@ -89,15 +114,7 @@ public class LoginActivity extends AppCompatActivity {
                 UserInfo userInfo = new UserInfo();
                 userInfo.setAccount(edt_account.getText().toString().trim());
                 userInfo.setPassword(edt_password.getText().toString().trim());
-
-                DBAdapter dbAdapter = new DBAdapter(getApplicationContext());
-                dbAdapter.open();
-                if (dbAdapter.insert(userInfo.getAccount(), userInfo.getPassword())){
-                    Toast.makeText(getApplicationContext(), "注册成功", Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(getApplicationContext(), "注册失败", Toast.LENGTH_SHORT).show();
-                }
-                dbAdapter.close();
+                register(userInfo.getAccount(), userInfo.getPassword());
             }
         });
 
@@ -107,20 +124,56 @@ public class LoginActivity extends AppCompatActivity {
                 UserInfo userInfo = new UserInfo();
                 userInfo.setAccount(edt_account.getText().toString().trim());
                 userInfo.setPassword(edt_password.getText().toString().trim());
-
-                DBAdapter dbAdapter = new DBAdapter(getApplicationContext());
-                dbAdapter.open();
-
-                if (dbAdapter.login(userInfo.getAccount(), userInfo.getPassword())){
-                    Toast.makeText(getApplicationContext(), "登录成功！", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(LoginActivity.this, WeiXinActivity.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(getApplicationContext(), "登录失败！", Toast.LENGTH_LONG).show();
-                }
-                dbAdapter.close();
+                login(userInfo.getAccount(), userInfo.getPassword());
             }
         });
+
+        cbx_auto.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (cbx_auto.isChecked()){
+                    sp.edit().putBoolean("AUTO_LOGIN", true).commit();
+                }else {
+                    sp.edit().putBoolean("AUTO_LOGIN", false).commit();
+                }
+            }
+        });
+    }
+
+    private void login(String account, String password){
+        DBAdapter dbAdapter = new DBAdapter(getApplicationContext());
+        dbAdapter.open();
+        if (dbAdapter.login(account, password)){
+            Toast.makeText(getApplicationContext(), "登录成功！", Toast.LENGTH_LONG).show();
+            sp_auto(account, password);
+            Intent intent = new Intent(LoginActivity.this, WeiXinActivity.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(getApplicationContext(), "登录失败！", Toast.LENGTH_LONG).show();
+        }
+        dbAdapter.close();
+    }
+
+    private void register(String account, String password){
+        DBAdapter dbAdapter = new DBAdapter(getApplicationContext());
+        dbAdapter.open();
+        if (dbAdapter.insert(account, password)){
+            Toast.makeText(getApplicationContext(), "注册成功", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(getApplicationContext(), "注册失败", Toast.LENGTH_SHORT).show();
+        }
+        dbAdapter.close();
+    }
+
+    private void sp_auto(String account, String password){
+        SharedPreferences.Editor editor = sp.edit();
+        try {
+            editor.putString("ACCOUNT", account);
+            editor.putString("PASSWORD", password);
+        }catch (Exception e){
+
+        }
+        editor.commit();
     }
 
     private void init(){
@@ -128,5 +181,6 @@ public class LoginActivity extends AppCompatActivity {
         edt_password = findViewById(R.id.edt_login_password);
         btn_login = findViewById(R.id.btn_login_login);
         btn_register = findViewById(R.id.btn_login_register);
+        cbx_auto = findViewById(R.id.cbx_login_autologin);
     }
 }
