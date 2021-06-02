@@ -64,4 +64,45 @@
         <item name="android:textSize">18dp</item>
         <item name="android:popupBackground">@drawable/bg_context_menu</item>
     </style>
+
+    <style name="find_img_right_arrow">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+    </style>
+
+    <style name="find_btn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_marginTop">1dp</item>
+    </style>
+
+    <style name="sqlite_linearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="sqlite_edt_stu_id">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:maxLength">13</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="sqlite_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#D0D0D0</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
 </resources>

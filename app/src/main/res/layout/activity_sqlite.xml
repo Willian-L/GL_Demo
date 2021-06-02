@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SQLiteActivity"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/sql_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#EEEEEE"
+        app:navigationIcon="@mipmap/return_icon">
+
+    <TextView
+        android:id="@+id/tool_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:text="SQLite" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/sql_txt_result"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="15dp"
+        android:text="Welcome"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:layout_margin="10dp"
+        android:background="#D0D0D0"
+        android:padding="10dp"/>
+
+    <LinearLayout
+        style="@style/sqlite_linearLayout"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/sql_btn_open"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:text="Open SQLite"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/sql_btn_close"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:text="Close SQLite"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:enabled="false"/>
+
+    </LinearLayout>
+
+    <View style="@style/sqlite_view" />
+
+    <LinearLayout
+        style="@style/sqlite_linearLayout"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Student ID:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:gravity="right"/>
+
+        <EditText
+            android:id="@+id/sql_edt_ins_stu_id"
+            android:hint="The new student ID"
+            android:layout_weight="2"
+            style="@style/sqlite_edt_stu_id"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/sqlite_linearLayout"
+        android:weightSum="3">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Student Name:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:gravity="right"/>
+
+        <EditText
+            android:id="@+id/sql_edt_ins_stu_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="The new student name"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_weight="2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/sqlite_linearLayout">
+
+        <Button
+            android:id="@+id/sql_btn_insert"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:text="Insert"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:enabled="false"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#D0D0D0"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        style="@style/sqlite_linearLayout"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Student ID:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:gravity="right"/>
+
+        <EditText
+            android:id="@+id/sql_edt_sel_stu_id"
+            android:hint="The student ID to be queried"
+            android:layout_weight="2"
+            style="@style/sqlite_edt_stu_id" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/sqlite_linearLayout"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/sql_btn_query"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:text="Query"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:enabled="false"/>
+
+        <Button
+            android:id="@+id/sql_btn_delete"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:text="Delete"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:enabled="false"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#D0D0D0"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        style="@style/sqlite_linearLayout"
+        android:layout_marginTop="10dp"
+        android:weightSum="9">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Original student ID"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/sql_edt_ori_id"
+                android:layout_width="match_parent"
+                android:hint="Please enter ..."
+                style="@style/sqlite_edt_stu_id"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="→"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="25dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New student ID"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/sql_edt_new_id"
+                android:layout_width="match_parent"
+                android:hint="Please enter ..."
+                style="@style/sqlite_edt_stu_id"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/sqlite_linearLayout">
+
+        <Button
+            android:id="@+id/sql_btn_update"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:text="Update"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:enabled="false"/>
+
+    </LinearLayout>
+
+</LinearLayout>

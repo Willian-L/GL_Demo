@@ -1,14 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".wx_fragment.FindFragment">
+    tools:context=".wx_fragment.FindFragment"
+    android:background="#EFEFEF">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="find" />
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/find_edt_putExtra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:hint="putExtra"
+            android:text="2013202604032 林炜力"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/find_btn_put_extra"
+            style="@style/find_btn"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <ImageView
+                android:id="@+id/find_img_put_extra"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:src="@mipmap/circle_of_friends"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="putExtra"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/find_img_put_extra"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:src="@mipmap/right_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/find_img_right_arrow" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/find_btn_intent"
+            style="@style/find_btn">
+
+            <ImageView
+                android:id="@+id/find_img_intent"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:src="@mipmap/circle_of_friends"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Intent"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/find_img_intent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:src="@mipmap/right_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/find_img_right_arrow" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/find_btn_linear"
+            style="@style/find_btn">
+
+            <ImageView
+                android:id="@+id/find_img_linear"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:src="@mipmap/circle_of_friends"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="LinearLayout"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/find_img_linear"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:src="@mipmap/right_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/find_img_right_arrow" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/find_btn_sqlite"
+            style="@style/find_btn">
+
+            <ImageView
+                android:id="@+id/find_img_sqlite"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:src="@mipmap/circle_of_friends"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="SQLite"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/find_img_sqlite"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:src="@mipmap/right_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/find_img_right_arrow" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
 
 </FrameLayout>
